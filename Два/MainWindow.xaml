@@ -1,0 +1,39 @@
+﻿<Window x:Class="Два.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Два"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="#FFCEFFB8" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <GroupBox Width="250" Height="170" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="100, 0, 0, 10" Header="Таблица" BorderBrush="#FF44A722" Foreground="#FF009E07">
+            <Grid>
+                <TextBox x:Name="cols" Width="70" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 10, 0, 0" SelectionBrush="#FF89C5F5"/>
+                <TextBox x:Name="minzn" Width="70" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 40, 0, 0" SelectionBrush="#FF89C5F5"/>
+                <TextBox x:Name="maxzn" Width="70" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 70, 0, 0" SelectionBrush="#FF89C5F5"/>
+                <TextBlock TextWrapping="Wrap" Height="20" Width="150" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0, 10, 0, 0">- количество столбцов</TextBlock>
+                <TextBlock TextWrapping="Wrap" Height="20" Width="150" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0, 40, 0, 0">- минимальное значение</TextBlock>
+                <TextBlock TextWrapping="Wrap" Height="20" Width="150" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0, 70, 0, 0">- максимальное значение</TextBlock>
+                <Button x:Name="btn_Заполнить" Height="20" Width="200" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0, 0, 0, 20" Background="Transparent" BorderBrush="#FF44A722" Foreground="Black" Content="Создать и заполнить" Click="btn_Заполнить_Click"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Width="250" Height="170" HorizontalAlignment="Right" VerticalAlignment="Bottom" Header="Расчёт" BorderBrush="#FF44A722" Foreground="#FF009E07" Margin="0, 0, 100, 10">
+            <Grid>
+                <TextBox x:Name="result" Width="70" Height="20" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 40, 0, 0" SelectionBrush="#FF89C5F5"/>
+                <TextBox x:Name="limit" Width="70" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 10, 0, 0" SelectionBrush="#FF89C5F5"/>
+                <TextBlock TextWrapping="Wrap" Height="20" Width="150" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0, 40, 0, 0">- сумма</TextBlock>
+                <TextBlock TextWrapping="Wrap" Height="20" Width="150" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0, 10, 0, 0">- верхний предел чисел</TextBlock>
+                <Button x:Name="btn_Count" Height="20" Width="200" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0, 0, 0, 20" Background="Transparent" BorderBrush="#FF44A722" Foreground="Black" Content="Рассчитать" Click="btn_Count_Click"/>
+            </Grid>
+        </GroupBox>
+
+        <DataGrid x:Name="dataGrid" CellEditEnding="dataGrid_CellEditEnding" Width="500" Height="150" ColumnWidth="45" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0, 30, 0, 0" BorderThickness="0" Background="White" BorderBrush="{x:Null}" HeadersVisibility="None" ></DataGrid>
+
+        <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF8AFF56">
+            <MenuItem x:Name="Exit" Header="Выход" Click="Exit_Click"></MenuItem>
+            <MenuItem x:Name="About" Header="О программе" Click="About_Click"></MenuItem>
+        </Menu>
+    </Grid>
+</Window>
