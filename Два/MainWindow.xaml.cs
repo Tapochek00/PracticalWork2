@@ -42,6 +42,7 @@ namespace Два
                 arr = new int[colsNumber];
                 Class2.FillArr(ref arr, min, max);
                 dataGrid.ItemsSource = VisualArray.ToDataTable(arr).DefaultView;
+                countGroup.IsEnabled = true;
             }
             catch(Exception ex)
             {
